@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addContact } from '../Redux/Add_Contacts/addContacts.action.js'
 
 const getData = async () => {
-  return await axios.get("https://my-json-server.typicode.com/Das-Swarup/contact-management/contacts")
+  return await axios.get("http://localhost:3000/contacts")
 }
 
 
@@ -51,14 +51,14 @@ const Contacts = () => {
   const handleSubmitEdit = (e, id) => {
     e.preventDefault();
     try {
-      axios.put(`https://my-json-server.typicode.com/Das-Swarup/contact-management/contacts/${id}`, { name: edit.name, lastName: edit.lastName, status: edit.status }).then(() => alert("Contact Edit Successfully")).then(() => getData().then((res) => setContacts(res.data)))
+      axios.put(`http://localhost:3000/contacts/${id}`, { name: edit.name, lastName: edit.lastName, status: edit.status }).then(() => alert("Contact Edit Successfully")).then(() => getData().then((res) => setContacts(res.data)))
     }
     catch (err) {
       console.log(err)
     }
   }
   const deleteContact = (id) => {
-    axios.delete(`https://my-json-server.typicode.com/Das-Swarup/contact-management/contacts/${id}`).then((res) => alert("Contact Delete Successfully")).then(() => getData().then((res) => setContacts(res.data)))
+    axios.delete(`http://localhost:3000/contacts/${id}`).then((res) => alert("Contact Delete Successfully")).then(() => getData().then((res) => setContacts(res.data)))
   }
   useEffect(() => {
     getData().then((res) => setData(res.data))
