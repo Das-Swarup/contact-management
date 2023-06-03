@@ -89,7 +89,7 @@ const viewContact=()=>{
                <Box><Link style={{textDecoration:"none",fontSize:"20px",fontWeight:"bold"}} to="/">Contacts</Link></Box>
                <Box><Link style={{textDecoration:"none",fontSize:"20px",fontWeight:"bold"}} to="/chartsandmaps">Charts & Maps</Link></Box>
             </Flex>}
-            <Box padding={"30px"} margin={'auto'}  w={"79%"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} border={"1px solid gray"}>
+            <Box padding={"30px"} margin={'auto'}  w={"79%"} h={"100%"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} border={"1px solid gray"}>
                {flag?<></>:<Button marginTop={"20px"} onClick={onOpen}>Create Contact</Button>}
                <Box>
                 {

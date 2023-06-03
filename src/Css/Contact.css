@@ -17,13 +17,14 @@ input{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 4%;
-    margin: auto;
+    margin: 20px;
 }
 #data_container div{
     padding: 10px 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: grid;
     gap: 10px;
+    background: rgba(0, 0, 0, 0.425);
 }
 #data_container div button{
     padding: 5px 10px;
@@ -57,7 +58,7 @@ input{
         display: grid;
         grid-template-columns: repeat(1,1fr);
         gap: 4%;
-        margin: auto;
+        margin: 20px;
     }
     #form{
         width: 90%;
