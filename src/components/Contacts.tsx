@@ -50,12 +50,17 @@ const Contacts = () => {
   }
   const handleSubmitEdit = (e, id) => {
     e.preventDefault();
-    try {
-      axios.put(`http://localhost:3000/contacts/${id}`, { name: edit.name, lastName: edit.lastName, status: edit.status }).then(() => alert("Contact Edit Successfully")).then(() => getData().then((res) => setContacts(res.data)))
+    if (edit.name && edit.lastName && edit.status){
+      try {
+        axios.put(`http://localhost:3000/contacts/${id}`, { name: edit.name, lastName: edit.lastName, status: edit.status }).then(() => alert("Contact Edit Successfully")).then(() => getData().then((res) => setContacts(res.data)))
+      }
+      catch (err) {
+        console.log(err)
+      }
+    }else {
+      alert("please fill all creadentials")
     }
-    catch (err) {
-      console.log(err)
-    }
+    
   }
   const deleteContact = (id) => {
     axios.delete(`http://localhost:3000/contacts/${id}`).then((res) => alert("Contact Delete Successfully")).then(() => getData().then((res) => setContacts(res.data)))
@@ -78,18 +83,18 @@ const Contacts = () => {
 
   return (
     <div id="contact_page">
-      <Heading color={'white'} p={"10px 20px"} bg={"#28686e"}>Contact Page</Heading>
+      <Heading color={'white'} p={"10px 20px"} bg={"#646cff"} marginTop={0}>Contact Page</Heading>
       <div id="contact_page_div">
         {window.innerWidth > 900 ? <Box padding={"10px"} w={"19%"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}>
           <Box><Link style={{ textDecoration: "none", fontSize: "20px", fontWeight: "bold" }} to="/">Contacts</Link></Box>
           <br />
           <br />
           <Box><Link style={{ textDecoration: "none", fontSize: "20px", fontWeight: "bold" }} to="/chartsandmaps">Charts & Maps</Link></Box>
-        </Box> : <Flex justifyContent={"space-evenly"} w={"100%"} margin={'auto'} marginBottom={"20px"} p={"10px 0px"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}>
+        </Box> : <Flex justifyContent={"space-evenly"} w={"100%"} margin={'auto'} marginBottom={"20px"} p={"10px 0px"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} borderRadius={"20px"}>
           <Box><Link style={{ textDecoration: "none", fontSize: "20px", fontWeight: "bold" }} to="/">Contacts</Link></Box>
           <Box><Link style={{ textDecoration: "none", fontSize: "20px", fontWeight: "bold" }} to="/chartsandmaps">Charts & Maps</Link></Box>
         </Flex>}
-        <Box padding={"30px"} margin={'auto'} w={"79%"} h={"100%"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} border={"1px solid gray"}>
+        <Box padding={"30px"} margin={'auto'} w={"79%"} h={"100%"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"} border={"1px solid gray"} >
           {flag ? <></> : <Button marginTop={"20px"} onClick={onOpen}>Create Contact</Button>}
           <Box>
             {
@@ -128,28 +133,29 @@ const Contacts = () => {
                       <PopoverTrigger  >
                         <button onClick={viewContact} style={{ backgroundColor: "#bbc1c6" }}>View</button>
                       </PopoverTrigger>
-                      <PopoverContent backgroundColor={'#bbc1c6'} padding={'20px'} color='white' margin={'auto'}  >
-                        <PopoverCloseButton backgroundColor={'#bbc1c6'}><Button backgroundColor={"black"} color={'white'}>x</Button></PopoverCloseButton>
-                        <Text color={"black"}>name- {el.name}</Text>
-                        <Text color={"black"}>lastname- {el.lastName}</Text>
-                        <Text color={"black"}>status- {el.status}</Text>
+                      <PopoverContent backgroundColor={'#bbc1c6'} padding={'20px'} color='white' borderRadius={"10px"}  >
+                        <PopoverCloseButton backgroundColor={'#bbc1c6'}><Button backgroundColor={"black"} color={'white'}>Close</Button></PopoverCloseButton>
+                        <Text color={"black"}>Name- {el.name}</Text>
+                        <Text color={"black"}>Last Name- {el.lastName}</Text>
+                        <Text color={"black"}>Status- {el.status}</Text>
                       </PopoverContent>
                     </Popover>
                     <Popover >
                       <PopoverTrigger  >
                         <button style={{ color: "white", backgroundColor: "#194d33" }}>Edit</button>
                       </PopoverTrigger>
-                      <PopoverContent backgroundColor={'#194d33'} padding={'10px'} color='white' margin={'auto'}   >
-                        <PopoverCloseButton backgroundColor={'#194d33'}><Button backgroundColor={"black"} color={'white'}>x</Button></PopoverCloseButton>
+                      <PopoverContent backgroundColor={'#bbc1c6'} padding={'10px'} color='black' margin={'auto'} borderRadius={"10px"}  >
+                        <PopoverCloseButton backgroundColor={'#bbc1c6'}><Button backgroundColor={"black"} color={'white'}>Close</Button></PopoverCloseButton>
                         <label >Name:</label>
-                        <input type="text" id="name" name="name" onChange={handleChangeEdit} />
+                        <input type="text" id="name" name="name" onChange={handleChangeEdit} style={{background: "transparent",outline: "none",border: "1px solid #616161",borderRadius:" 2px",fontSize: '18px',color: "black" }} />
                         <br />
 
                         <label>Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" onChange={handleChangeEdit} />
+                        <input type="text" id="lastName" name="lastName" onChange={handleChangeEdit} style={{background: "transparent",outline: "none",border: "1px solid #616161",borderRadius:" 2px",fontSize: '18px',color: "black" }} />
 
 
-                        <label>Status:</label><input type="checkbox" id="status" name="status" value="active" onChange={handleChangeEdit} />
+                        <label>Status:</label>
+                        <input type="checkbox" id="status" name="status" value="active" onChange={handleChangeEdit} />
                         <label>Active</label>
                         <input type="checkbox" id="status" name="status" value="inactive" onChange={handleChangeEdit} />
                         <label>Inactive</label>

@@ -1,3 +1,11 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "0": {},
+      "id": "c1770759-0867-4552-9de6-dddbf69c660c",
+      "name": "Swarup",
+      "lastName": "das",
+      "status": "active"
+    }
+  ]
 }

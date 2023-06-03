@@ -61,7 +61,7 @@ const ChartsAndMaps = () => {
 
   return (
     <div>
-      <Heading color={'white'} p={"10px 20px"} bg={"#28686e"}>Charts and Maps</Heading>
+      <Heading color={'white'} p={"10px 20px"} bg={"#646cff"} marginTop={0}>Charts and Maps</Heading>
       <div id="charts_page_div">
         {window.innerWidth > 900 ? <Box padding={"10px"} w={"19%"} boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}>
           <Box><Link style={{ textDecoration: "none", fontSize: "20px", fontWeight: "bold" }} to="/">Contacts</Link></Box>
