@@ -24,7 +24,7 @@ All pages in the application are responsive and optimized for various screen siz
 
 The application was built using the following tech stacks:
 
-- HTML, CSS, and JavaScript for the foundational structure and styling.
+- HTML, CSS, and TypeScript for the foundational structure and styling.
 - React.js and React-Router for building the application components and managing routing.
 - JSON-Server and API integration for data storage and retrieval.
 - Chart.js for creating interactive charts and graphs.
