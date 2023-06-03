@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { Box, Flex, Heading } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -13,7 +13,6 @@ const fetchChartData = async () => {
 const ChartsAndMaps = () => {
   const [chartData, setChartData] = useState({});
   const [countryData, setCountryData] = useState([]);
-  const [windwindth, setWindwidth] = useState({ wid: window.innerWidth })
 
 
 
@@ -49,11 +48,11 @@ const ChartsAndMaps = () => {
 
   useEffect(() => {
     const chartConfig = {
-      type: 'line',
+      type: 'bar' ,
       data: chartData,
     };
 
-    const myChart = new Chart(document.getElementById('myChart'), chartConfig);
+    const myChart = new Chart(document.getElementById('myChart') , chartConfig);
     return () => {
       myChart.destroy();
     };

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Box, Button, Flex, Grid, Heading, Popover, PopoverCloseButton, PopoverContent, PopoverTrigger, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Popover, PopoverCloseButton, PopoverContent, PopoverTrigger, Text } from '@chakra-ui/react'
 import "../Css/Contact.css"
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { v4 } from "uuid"
-import { useDispatch, useSelector } from 'react-redux'
-import { addContact } from '../Redux/Add_Contacts/addContacts.action.js'
+import { useDispatch } from 'react-redux'
+import { addContact } from '../Redux/Add_Contacts/addContacts.action'
 
 const getData = async () => {
   return await axios.get("http://localhost:3000/contacts")

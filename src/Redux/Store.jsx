@@ -1,7 +1,7 @@
 import {legacy_createStore,compose, combineReducers, applyMiddleware} from "redux"
 
 
-import { ContactReducer } from "./Add_Contacts/addContacts.reducer.js";
+import { ContactReducer } from "./Add_Contacts/addContacts.reducer";
 import thunk from "redux-thunk";
 
 

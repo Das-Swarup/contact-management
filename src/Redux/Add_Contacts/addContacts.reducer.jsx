@@ -1,12 +1,12 @@
 
-import { ADD_CONTACT_ERROR, ADD_CONTACT_SUCCESS } from "./addContacts.actiontype.js"
+import { ADD_CONTACT_ERROR, ADD_CONTACT_SUCCESS } from "./addContacts.actiontype"
 
 const initialState={
     contacts:[],
     error:false
 }
 
-export const ContactReducer=(state=initialState,{type,payload})=>{
+export const ContactReducer=(state=initialState,{type, payload})=>{
     switch(type){
           case ADD_CONTACT_SUCCESS: {
             return {
