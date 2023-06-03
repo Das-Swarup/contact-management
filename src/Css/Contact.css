@@ -7,12 +7,56 @@ input{
     margin-bottom: 500px;
 }
 #form {
-    width: 30%;
     margin: auto;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 20px;
+    color: black;
 }
+
+#form input{
+    background: transparent;
+    outline: none;
+    border: 1px solid #616161;
+    border-radius: 2px;
+    font-size: 18px;
+    color: black;
+}
+
+#form input[type=submit]{
+    background: #646cff;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#form input[type="checkbox"] {
+    background-color: #002B4E !important;
+    color: white;
+}
+
+#form input[type="checkbox"]:enabled:checked {
+    background-color: #002B4E !important;
+    color: white;
+}
+
+#form input[type="checkbox"]:before {
+    background-color: #002B4E !important;
+    color: white;
+}
+
+#form input[type="checkbox"]::before {
+    background-color: #002B4E !important;
+    color: white;
+}
+
+.dark-checkbox input[type="checkbox"]:checked {
+    background-color: #002B4E !important;
+    color: white;
+}
+
 #data_container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -25,6 +69,8 @@ input{
     display: grid;
     gap: 10px;
     background: rgba(0, 0, 0, 0.425);
+    border-radius: 10px;
+    width: 200px;
 }
 #data_container div button{
     padding: 5px 10px;
