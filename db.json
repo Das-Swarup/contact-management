@@ -1,6 +1,7 @@
 
-[
-    {
+{
+    "contacts": [
+        {
         "0": {},
         "id": "39874e0a-2eb7-4150-ad0e-33ebafa3d7fe",
         "name": "Narula",
@@ -21,4 +22,5 @@
         "lastName": "DFSDAd",
         "status": "active"
     }
-]
+ ]
+}
