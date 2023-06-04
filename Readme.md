@@ -38,12 +38,12 @@ To get started with the Contacts App, follow these steps:
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/contacts-app.git
+   git clone https://github.com/Das-Swarup/contact-management
 
 2. Navigate to the project directory:
 
     ```shell
-    cd contacts-app
+    cd contact-management
 
 3. Install the dependencies using npm:
 
