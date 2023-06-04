@@ -48,7 +48,7 @@ const ChartsAndMaps = () => {
 
   useEffect(() => {
     const chartConfig = {
-      type: 'bar' ,
+      type: 'line' ,
       data: chartData,
     };
 
